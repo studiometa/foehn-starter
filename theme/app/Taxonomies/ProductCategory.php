@@ -7,7 +7,6 @@ namespace App\Taxonomies;
 use Studiometa\Foehn\Attributes\AsTaxonomy;
 use Studiometa\Foehn\Contracts\ConfiguresTaxonomy;
 use Studiometa\Foehn\PostTypes\TaxonomyBuilder;
-use Timber\Term;
 
 #[AsTaxonomy(
     name: 'product_category',
@@ -18,7 +17,7 @@ use Timber\Term;
     showInRest: true,
     showAdminColumn: true,
 )]
-final class ProductCategory extends Term implements ConfiguresTaxonomy
+final class ProductCategory implements ConfiguresTaxonomy
 {
     public static function configureTaxonomy(TaxonomyBuilder $builder): TaxonomyBuilder
     {

@@ -5,18 +5,17 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Studiometa\Foehn\Attributes\AsTemplateController;
-use Studiometa\Foehn\Contracts\TemplateControllerInterface;
 use Studiometa\Foehn\Contracts\ViewEngineInterface;
 use Timber\Timber;
 
 #[AsTemplateController('search')]
-final readonly class SearchController implements TemplateControllerInterface
+final readonly class SearchController
 {
     public function __construct(
         private ViewEngineInterface $view,
     ) {}
 
-    public function handle(): string
+    public function __invoke(): string
     {
         $context = Timber::context();
 
